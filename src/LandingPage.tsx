@@ -5,7 +5,7 @@ import profileColoredImage from './assets/profilecolored.png';
 import FlowingMenu from './component/flowingmenu';
 import omniportalImage from './assets/omniportallogin.png';
 import kadizImage from './assets/kadizmockup.png';
-import spendzyImage from './assets/Spendzy.png'
+import spendzyImage from './assets/spendzy.png'
 
 const LandingPage = () => {
   const [scrollY, setScrollY] = useState(0);
