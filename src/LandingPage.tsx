@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import profileImage from './assets/profile.png';
-import profileColoredImage from './assets/profilecolored.png';
+import profileImage from './assets/profile.webp';
+import profileColoredImage from './assets/profilecolored.webp';
 import FlowingMenu from './component/flowingmenu';
-import omniportalImage from './assets/omniportallogin.png';
-import kadizImage from './assets/kadizmockup.png';
-import spendzyImage from './assets/spendzy.png'
+import omniportalImage from './assets/omniportallogin.webp';
+import kadizImage from './assets/kadizmockup.webp';
+import spendzyImage from './assets/spendzy.webp'
 
 const LandingPage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -62,7 +62,7 @@ const LandingPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // Get free key from web3forms.com
+          access_key: 'd6e60692-5318-4b4d-b5ee-7e9e05fa37d8', // Get free key from web3forms.com
           name: emailForm.name,
           email: emailForm.email,
           message: emailForm.message,

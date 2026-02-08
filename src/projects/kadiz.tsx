@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import kadizMockup from '../assets/kadizmockup.png';
+import kadizMockup from '../assets/kadizmockup.webp';
 
 const Kadiz = () => {
   const navigate = useNavigate();

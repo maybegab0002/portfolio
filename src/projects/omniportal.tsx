@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import omniportalMockup from '../assets/omniportallogin.png';
+import omniportalMockup from '../assets/omniportallogin.webp';
 
 const Omniportal = () => {
   const navigate = useNavigate();

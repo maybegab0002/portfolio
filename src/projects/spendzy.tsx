@@ -1,8 +1,8 @@
 
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import spendzySIgnup from '../assets/spendzysignup.png';
-import spendzyMain from '../assets/spendzy.png';
+import spendzySIgnup from '../assets/spendzysignup.webp';
+import spendzyMain from '../assets/spendzy.webp';
 
 const Spendzy = () => {
   const navigate = useNavigate();
