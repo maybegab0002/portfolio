@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import profileImage from './assets/profile.webp';
 import profileColoredImage from './assets/profilecolored.webp';
-import FlowingMenu from './component/flowingmenu';
+import Beams from './component/Beams';
 import omniportalImage from './assets/omniportallogin.webp';
 import kadizImage from './assets/kadizmockup.webp';
-import spendzyImage from './assets/spendzy.webp'
+import spendzyImage from './assets/spendzy.webp';
 
 const LandingPage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -88,22 +88,28 @@ const LandingPage = () => {
     }
   };
 
-  const featuredWorkItems = [
-    { 
-      link: '/projects/omniportal', 
-      text: 'Omniportal', 
-      image: omniportalImage 
+  const projects = [
+    {
+      title: 'Omniportal',
+      description: 'Client onboarding and secure portal for teams and partners.',
+      tags: ['Portal', 'Auth', 'B2B'],
+      image: omniportalImage,
+      link: '/projects/omniportal'
     },
-    { 
-      link: '/projects/kadiz', 
-      text: 'Kadiz POS', 
-      image: kadizImage
+    {
+      title: 'Kadiz POS',
+      description: 'Point-of-sale system with real-time inventory and analytics.',
+      tags: ['POS', 'Inventory', 'Retail'],
+      image: kadizImage,
+      link: '/projects/kadiz'
     },
-    { 
-      link: '/projects/spendzy', 
-      text: 'Spendzy - Financial Tracking App', 
-      image: spendzyImage 
-    },
+    {
+      title: 'Spendzy',
+      description: 'Personal finance tracking app with budget insights and goals.',
+      tags: ['FinTech', 'Insights', 'Mobile-first'],
+      image: spendzyImage,
+      link: '/projects/spendzy'
+    }
   ];
 
   const experiences = [
@@ -122,6 +128,24 @@ const LandingPage = () => {
     "DevOps": ["Docker", "AWS", "CI/CD", "Kubernetes", "Git"]
   };
 
+  const techLogos: Record<string, string> = {
+    "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "Vite": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
+    "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    "TypeScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "Tailwind CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "Express.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "Supabase": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+    "Firebase": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    "MongoDB": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "Docker": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "AWS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    "CI/CD": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg",
+    "Kubernetes": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg",
+    "Git": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+  };
+
   return (
     <div style={{
       fontFamily: "'Outfit', -apple-system, BlinkMacSystemFont, sans-serif",
@@ -130,6 +154,26 @@ const LandingPage = () => {
       minHeight: '100vh',
       position: 'relative'
     }}>
+      {/* Global Beams Background */}
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        opacity: 0.35,
+        pointerEvents: 'none',
+        zIndex: 0
+      }}>
+        <Beams
+          beamWidth={1.7}
+          beamHeight={25}
+          beamNumber={20}
+          lightColor="#ffffff"
+          speed={1.9}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={60}
+        />
+      </div>
+
       {/* Vertical border lines on sides */}
       <div style={{
         position: 'fixed',
@@ -569,7 +613,26 @@ const LandingPage = () => {
                         borderRadius: '6px',
                         letterSpacing: '0.02em'
                       }}>
-                        {tech}
+                        <span style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.5rem'
+                        }}>
+                          {techLogos[tech] && (
+                            <img
+                              src={techLogos[tech]}
+                              alt={`${tech} logo`}
+                              style={{
+                                width: '16px',
+                                height: '16px',
+                                objectFit: 'contain',
+                                filter: 'grayscale(10%)'
+                              }}
+                              loading="lazy"
+                            />
+                          )}
+                          <span>{tech}</span>
+                        </span>
                       </span>
                     ))}
                   </div>
@@ -853,20 +916,97 @@ const LandingPage = () => {
             color: '#aaaaaa',
             maxWidth: '600px'
           }}>
-            Explore my latest projects and creative solutions. Hover over each project to see more details.
+            Explore my latest projects and creative solutions. Click a project to see more details.
           </p>
         </div>
 
-        <div style={{ height: '600px', position: 'relative' }}>
-          <FlowingMenu 
-            items={featuredWorkItems}
-            speed={15}
-            textColor="#ffffff"
-            bgColor="#0a0a0a"
-            marqueeBgColor="#ffffff"
-            marqueeTextColor="#0a0a0a"
-            borderColor="#ffffff"
-          />
+        <div style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          position: 'relative'
+        }}>
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <a
+                key={project.title}
+                href={project.link}
+                className={`project-card ${index === 2 ? 'span-2' : ''} ${project.title === 'Spendzy' ? 'mb-spendzy' : ''}`}
+                style={{
+                  textDecoration: 'none',
+                  color: 'inherit'
+                }}
+              >
+                <div
+                  className="project-image"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%), url(${project.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                />
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <h3 style={{
+                    fontSize: '1.1rem',
+                    fontWeight: 700,
+                    marginBottom: '0.5rem',
+                    letterSpacing: '-0.01em'
+                  }}>
+                    {project.title}
+                  </h3>
+                  <p style={{
+                    fontSize: '0.9rem',
+                    lineHeight: 1.5,
+                    color: '#bdbdbd',
+                    marginBottom: '1rem'
+                  }}>
+                    {project.description}
+                  </p>
+
+                  <div style={{
+                    display: 'flex',
+                    gap: '0.5rem',
+                    flexWrap: 'wrap',
+                    marginBottom: '1rem'
+                  }}>
+                    {project.tags.map((tag) => (
+                      <span key={tag} style={{
+                        fontSize: '0.7rem',
+                        color: '#e5e5e5',
+                        padding: '0.25rem 0.6rem',
+                        borderRadius: '999px',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        background: 'rgba(255, 255, 255, 0.06)',
+                        letterSpacing: '0.04em'
+                      }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontSize: '0.8rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    color: '#ffffff'
+                  }}>
+                    View Project
+                    <span style={{
+                      width: '6px',
+                      height: '6px',
+                      borderRadius: '50%',
+                      background: '#ef4444'
+                    }} />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -961,7 +1101,7 @@ const LandingPage = () => {
                   outline: 'none',
                   transition: 'all 0.3s ease'
                 }}
-                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.5)'}
+                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(0, 102, 255, 0.5)'}
                 onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
               />
             </div>
@@ -992,7 +1132,7 @@ const LandingPage = () => {
                   outline: 'none',
                   transition: 'all 0.3s ease'
                 }}
-                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.5)'}
+                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(0, 102, 255, 0.5)'}
                 onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
               />
             </div>
@@ -1024,7 +1164,7 @@ const LandingPage = () => {
                   transition: 'all 0.3s ease',
                   resize: 'vertical'
                 }}
-                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(139, 92, 246, 0.5)'}
+                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(0, 102, 255, 0.5)'}
                 onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'}
               />
             </div>
@@ -1212,6 +1352,56 @@ const LandingPage = () => {
           scrollbar-color: rgba(0, 0, 0, 0.6) #0a0a0a;
         }
 
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1.25rem;
+        }
+
+        .project-card {
+          position: relative;
+          padding: 1.5rem;
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+          box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+          backdrop-filter: blur(18px);
+          -webkit-backdrop-filter: blur(18px);
+          transition: transform 0.25s ease, border-color 0.25s ease;
+          overflow: hidden;
+        }
+
+        .project-image {
+          opacity: 0;
+          transition: opacity 0.35s ease;
+          pointer-events: none;
+        }
+
+        .project-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(1200px 400px at -10% -20%, rgba(255, 255, 255, 0.06), transparent 60%);
+          pointer-events: none;
+        }
+
+        .project-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .project-card:hover .project-image {
+          opacity: 1;
+        }
+
+        .project-card.span-2 {
+          grid-column: span 2;
+        }
+
+        .project-card.mb-spendzy {
+          margin-bottom: 1.25rem;
+        }
+
         /* Responsive Design - Tablet and Mobile */
         @media (max-width: 768px) {
           /* Navigation */
@@ -1321,8 +1511,25 @@ const LandingPage = () => {
           }
 
           /* Projects Grid */
-          #projects > div > div:last-child {
+          .projects-grid {
             grid-template-columns: 1fr !important;
+          }
+
+          .project-card.span-2 {
+            grid-column: span 1 !important;
+          }
+
+          .project-card {
+            transform: none !important;
+          }
+
+          .project-card:hover {
+            transform: none !important;
+            border-color: rgba(255, 255, 255, 0.18) !important;
+          }
+
+          .project-image {
+            opacity: 1 !important;
           }
 
           /* Contact Form */
@@ -1355,6 +1562,28 @@ const LandingPage = () => {
           /* Skills - Single Column */
           #about > div > div:nth-child(4) > div {
             grid-template-columns: 1fr !important;
+          }
+
+          .project-card {
+            padding: 1.25rem !important;
+          }
+        }
+
+        @media (max-width: 425px) {
+          #projects {
+            padding: 3.25rem 1rem 0 1rem !important;
+          }
+
+          #projects h2 {
+            font-size: 2rem !important;
+          }
+
+          .projects-grid {
+            gap: 1rem !important;
+          }
+
+          .project-card {
+            width: 100% !important;
           }
         }
       `}</style>
