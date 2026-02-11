@@ -1276,6 +1276,14 @@ const LandingPage = () => {
             height: 100% !important;
           }
 
+          /* Badge Container - Stack vertically on mobile */
+          #hero .content-container > div:first-child {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 0.75rem !important;
+            justify-content: center !important;
+          }
+
           /* Buttons */
           #hero button {
             padding: 0.75rem 1.5rem !important;

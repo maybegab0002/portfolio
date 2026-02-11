@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-jmc4.vercel.app/sitemap.xml
+Sitemap: https://www.gabenciso.com/sitemap.xml
