@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-portfolio.vercel.app/</loc>
+    <loc>www.gabenciso.com</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://your-portfolio.vercel.app/projects/omniportal</loc>
+    <loc>https://www.gabenciso.com/projects/omniportal</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://your-portfolio.vercel.app/projects/kadiz</loc>
+    <loc>https://ywww.gabenciso.com/projects/kadiz</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://your-portfolio.vercel.app/projects/spendzy</loc>
+    <loc>https://www.gabenciso.com/projects/spendzy</loc>
     <lastmod>2025-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
