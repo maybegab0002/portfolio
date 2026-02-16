@@ -114,6 +114,12 @@ const LandingPage = () => {
 
   const experiences = [
     {
+      role: "Founder & Lead Developer",
+      company: "Kern",
+      period: "2026 - Present",
+      description: "Founded Kern, a freelance software and web app development brand focused on delivering high-quality, scalable solutions for clients worldwide. Specializing in modern web technologies and end-to-end application development."
+    },
+    {
       role: "Freelance Full Stack Developer",
       company: "Self-Employed",
       period: "2023 - Present",
@@ -222,7 +228,7 @@ const LandingPage = () => {
             backgroundClip: 'text',
             cursor: 'pointer'
           }}>
-          Portfolio
+          Gab Enciso
         </div>
         
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
@@ -348,7 +354,7 @@ const LandingPage = () => {
                 color: '#888888',
                 fontWeight: 500
               }}>
-                Full Stack Developer
+                Founder & Full Stack Developer
               </div>
               
               <div style={{
@@ -372,7 +378,7 @@ const LandingPage = () => {
                   backgroundColor: '#22c55e',
                   animation: 'pulse 2s ease-in-out infinite'
                 }}></span>
-                Available for Freelance Work
+                Operating as Kern
               </div>
             </div>
             
@@ -397,7 +403,7 @@ const LandingPage = () => {
               marginBottom: '2rem',
               maxWidth: '500px'
             }}>
-              Specializing in building scalable applications with modern technologies. 
+              I'm a full-stack developer operating under the brand Kern, specializing in building scalable web applications with modern technologies. 
               Passionate about clean code and exceptional user experiences.
             </p>
             
@@ -472,7 +478,7 @@ const LandingPage = () => {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
-              <span>Antipolo City, Philippines</span>
+              <span>Philippines</span>
             </div>
           </div>
         </div>
@@ -497,7 +503,7 @@ const LandingPage = () => {
             marginBottom: '0.75rem',
             fontWeight: 500
           }}>
-            About Me
+            About Me & Kern
           </div>
 
           <h2 style={{
@@ -529,8 +535,7 @@ const LandingPage = () => {
                 lineHeight: 1.6,
                 color: '#aaaaaa'
               }}>
-                With over 3 years of experience in web development, I've had the privilege 
-                of working on diverse projects ranging from startups to enterprise applications.
+                With over 3 years of experience in web development, I've worked on diverse projects ranging from startups to enterprise applications. In 2026, I launched Kern as my professional brand to deliver high-quality development services to clients worldwide.
               </p>
             </div>
 
@@ -548,7 +553,7 @@ const LandingPage = () => {
                 lineHeight: 1.6,
                 color: '#aaaaaa'
               }}>
-                I develop web applications designed to solve real business problems. Whether it’s streamlining operations, improving customer experience, or automating manual workflows, I build solutions that help businesses run more efficiently and grow faster. Every application is designed to be reliable, scalable, and easy for both teams and customers to use.
+                I develop web applications designed to solve real business problems. Whether it's streamlining operations, improving customer experience, or automating workflows, I build solutions that help businesses run efficiently and grow faster. Every application is reliable, scalable, and user-friendly.
               </p>
             </div>
 
@@ -566,7 +571,7 @@ const LandingPage = () => {
                 lineHeight: 1.6,
                 color: '#aaaaaa'
               }}>
-                I prioritize creating solutions that are structured, dependable, and built to last, so your business can operate smoothly without technical limitations slowing you down.
+                I prioritize creating solutions that are structured, dependable, and built to last. Quality code, clear communication, and client satisfaction are at the heart of everything I do. Your business deserves technology that empowers, not limits.
               </p>
             </div>
           </div>
@@ -1057,7 +1062,7 @@ const LandingPage = () => {
               margin: '0 auto 3rem'
             }}>
               I'm always open to discussing new projects, creative ideas, 
-              or opportunities to be part of your vision.
+              or opportunities to be part of your vision. Let's build something great together.
             </p>
           </motion.div>
 
@@ -1254,7 +1259,7 @@ const LandingPage = () => {
           fontSize: '0.85rem',
           color: '#888888'
         }}>
-          © {new Date().getFullYear()} Gab Enciso. All rights reserved.
+          © {new Date().getFullYear()} Gab Enciso · Kern. All rights reserved.
         </p>
       </footer>
 
